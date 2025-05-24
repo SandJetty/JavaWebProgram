@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOL 메인화면</title>
+    <style>
+      .mainPage {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 640px;
+        width: 100%;
+        overflow: hidden;
+      }
+      .mainPage-video {
+        height: 100%;
+        width: 100%;
+        max-height: 640px;
+        object-fit: cover;
+        overflow: hidden;
+      }
+      .mainPage-Container {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 484px;
+      }
+      .mainPage_Content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .mainPage_Content_PlayBtn {
+        padding: 19px 32px;
+        margin-top: 48px;
+        line-height: 24px;
+        text-decoration-line: none;
+        outline: 1px solid white;
+        outline-offset: 3px;
+        font-size: 18px;
+        color: #0a1428;
+        background-color: #c8aa62;
+        cursor: pointer;
+      }
+      .mainPage_Content_PlayBtn:hover {
+        background-color: #d3bb8b;
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body style="background-color: black">
+    <div style="display: flex; justify-content: space-evenly">
+      <img
+        style="justify-content: left"
+        src="images/main_Page_Logo.jpeg"
+        width="160px
+      "
+      />
+      <h3
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          font-style: italic;
+          color: white;
+        "
+      >
+        게임정보 | 새소식 | 챔피언 | 다운로드 | E스포츠 | 이벤트 | 알아보기 |
+        라이엇 스토어
+      </h3>
+    </div>
+    <div class="mainPage">
+      <video class="mainPage-video" autoplay loop playsinline>
+        <source
+          src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/8ab3e227121c53aacab0c9b9f7a48adbc65db520.webm"
+          type="video/webm"
+        />
+      </video>
+      <!-- <img src="images/main.jpg" width="1425px" -->
+      <div class="mainPage-Container">
+        <div class="mainPage_Content">
+          <img src="/images/main_Page_Logo.webp" alt="" />
+          <a
+            role="button"
+            class="mainPage_Content_PlayBtn"
+            href="https://www.leagueoflegends.com"
+            target="_blank"
+          >
+            <span>무료로 플레이하기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div style="display: flex; justify-content: center">
+      <h5
+        style="
+          color: white;
+          text-align: center;
+          font-weight: bold;
+          color: white;
+          font-family: '굴림';
+        "
+      >
+        서비스 약관 | 개인정보 처리 방침 | 서비스 상태 | 고객센터 | 사업자 정보
+        | 쿠키 설정
+        <br />
+      </h5>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <h3
+        style="
+          text-align: center;
+          font-size: 24px;
+          font-weight: bold;
+          color: white;
+          font-family: '굴림';
+        "
+      >
+        라이엇 게임 회사 정보 2025년 3월 작성됨
+      </h3>
+    </div>
+  </body>
+</html>
