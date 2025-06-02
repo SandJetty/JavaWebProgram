@@ -14,7 +14,11 @@
       crossorigin="anonymous"
     ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="../JS/popup.js"></script>
+
+    <!-- js 참조 -->
+    <script type="text/javascript" src="../JS/popup.js" defer></script>
+    <script type="text/javascript" src="../JS/popup_close.js" defer></script>
+
     <meta charset="UTF-8" />
     <title>팝업창 테스트</title>
   </head>
@@ -23,5 +27,6 @@
       <i class="bi bi-alarm"></i>팝업창 테스트<br /><br />
     </h1>
     <h1 class="display-4"><div id="divClock" class="clock"></div></h1>
+    <h1 class="display-4"><div id="Time" class="clock"></div></h1>
   </body>
 </html>

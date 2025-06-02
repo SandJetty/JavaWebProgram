@@ -1,17 +1,22 @@
+const search_message = () => {
+  const c = '검색을 수행합니다.';
+  alert(c);
+};
+
 document
   .getElementById('search_button_msg')
   .addEventListener('click', search_message);
-function search_message() {
-  alert('검색을 수행합니다!');
-}
-function search_message() {
-  alert('검색을 수행합니다!2');
-}
-function search_message() {
-  // alert('검색을 수행합니다!3');
-  let msg = '검색을 수행합니다.';
-  alert(msg);
-}
+// function search_message() {
+//   alert('검색을 수행합니다!');
+// }
+// function search_message() {
+//   alert('검색을 수행합니다!2');
+// }
+// function search_message() {
+//   // alert('검색을 수행합니다!3');
+//   let msg = '검색을 수행합니다.';
+//   alert(msg);
+// }
 
 function googleSearch() {
   const searchTerm = document.getElementById('search_input').value.trim(); // 앞뒤 공백 제거

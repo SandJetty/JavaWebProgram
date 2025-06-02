@@ -28,9 +28,9 @@ function show_clock() {
   setTimeout(show_clock, 1000); // 1초마다 시간 갱신
 }
 
-function over(obj) {
-  obj.src = 'images/GgullBull.jpeg';
-}
-function out(obj) {
+// const over = (obj) => {
+//   obj.src = 'images/GgullBull.jpeg';
+// };
+const over = (obj) => {
   obj.src = 'images/main_Page_Logo.jpeg';
-}
+};
