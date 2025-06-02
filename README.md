@@ -39,3 +39,33 @@
      완료 : 색상 dark로 변경
   3. 테이블에 색상 적용하기
      완료 : table-primary 색으로 변경
+
+# 4주차 : 자바스크립트 기초
+
+- 지난 주 내용 살펴보기
+  메타 태그의 추가 위치는? - <head>태그 내부
+  하이퍼링크 - <a>
+  Link와 하이퍼링크의 차이점? - Link: 외부 데이터를 참조하는 태그 / <a> : 웹사이트에 접근하는 태그
+  Bootstrap연동에 추가된 태그 3가지 : link, script, meta
+  기본 레이아웃 영역을 무엇이라 하는가? : <div> 태그/ 전체 구조를 의미한다면 header, main, footer
+  디자인 템플릿 지정에 필요한 것은? : meta-viewport, css, script
+  표 병합을 위한 속성 2가지 : colspan, rowspan
+
+- 이번주 진도
+  자바 스크립트와 html 연동 방법 - script태그
+  document / getElementById / addEventListener
+  alert
+  defer속성
+
+- 4주차 연습문제
+  자바스크립트 수정하기
+  1. 현재 클릭 이벤트 식별자 값 : search_btn
+     js 식별자값 search_button_msg로 수정완료
+  2. html 버튼 클릭 id 식별자 동일하게 수정완료
+  3. search_message() 2개 이상 추가완료
+     추가 시 에러 발생 X
+     우선순위는 가장 마지막에 작성된 함수가 앞의 함수를 덮어써 가장 높음
+  4. search_message()에 변수를 추가
+     let변수 활용하여 문자열 "검색을 수행합니다"를 msg변수로 저장 완료
+     alert(msg)로 변수를 출력하는 형태로 수정
+- 응용문제 풀기 (pdf에 없음)

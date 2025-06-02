@@ -22,7 +22,8 @@
     ></script>
 
     <!-- js참조 -->
-
+    <script type="text/javascript" src="JS/Basic_js_test.js" defer></script>
+    <script type="text/javascript" src="JS/search.js" defer></script>
     <style>
       .mainPage {
         position: relative;
@@ -180,8 +181,12 @@
               placeholder="검색어 입력"
               aria-label="검색어 입력"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+            <button
+              class="btn btn-outline-success"
+              id="search_button_msg"
+              type="submit"
+            >
+              검색하기
             </button>
           </form>
         </div>
@@ -192,7 +197,7 @@
         href="https://www.leagueoflegends.com/ko-kr/how-to-play/"
         target="_blank"
       >
-        <video class="mainPage-video" autoplay loop playsinline>
+        <video class="mainPage-video video-fluid" autoplay loop playsinline>
           <source
             src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/8ab3e227121c53aacab0c9b9f7a48adbc65db520.webm"
             type="video/webm"
