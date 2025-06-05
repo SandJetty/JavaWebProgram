@@ -26,8 +26,9 @@
 
     <!-- js 참조 -->
     <script type="text/javascript" src="../JS/login.js" defer></script>
+    <script type="text/javascript" src="../JS/session.js" defer></script>
   </head>
-  <body>
+  <body class="text-center" onload="init();">
     <section class="vh-100 gradient-custom">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -77,6 +78,21 @@
                     <p class="small mb-5 pb-lg-2">
                       <a class="text-white-50" href="#!">비밀번호 찾기</a>
                     </p>
+
+                    <div class="checkbox mb-3">
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="remember-me"
+                          id="idSaveCheck"
+                        />아이디 기억
+                      </label>
+                    </div>
+
+                    <div
+                      id="login_status"
+                      style="color: red; margin: 10px 0"
+                    ></div>
 
                     <button
                       data-mdb-button-init
