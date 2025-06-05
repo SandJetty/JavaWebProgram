@@ -28,6 +28,7 @@ function init() {
   session_check(); // 세션 유무 검사
 }
 
+// set 쿠키
 function setCookie(name, value, expiredays) {
   var date = new Date();
   date.setDate(date.getDate() + expiredays);
@@ -41,9 +42,10 @@ function setCookie(name, value, expiredays) {
     ';SameSite=None; Secure';
 }
 
+// get쿠키
 function getCookie(name) {
   var cookie = document.cookie;
-  console.log('쿠키를 요청합니다.');
+  // console.log('쿠키를 요청합니다.');
   if (cookie != '') {
     var cookie_array = cookie.split('; ');
     for (var index in cookie_array) {
@@ -54,6 +56,15 @@ function getCookie(name) {
     }
   }
   return;
+}
+
+// 세션 복호화 함수
+function init_logined() {
+  if (sessionStorage) {
+    decrypt_text(); // 복호화 함수
+  } else {
+    alert('세션 스토리지 지원 x');
+  }
 }
 
 // 로그인 횟수 증가 함수
@@ -118,6 +129,7 @@ function show_login_status() {
   }
 }
 
+// 입력값 검증 및 submit
 const check_input = () => {
   const loginForm = document.getElementById('login_form');
   const loginBtn = document.getElementById('login_btn');
@@ -127,6 +139,12 @@ const check_input = () => {
 
   const emailValue = emailInput.value.trim();
   const passwordValue = passwordInput.value.trim();
+
+  const payload = {
+    id: emailValue,
+    exp: Math.floor(Date.now() / 1000) + 3600, // 1시간 (3600초)
+  };
+  const jwtToken = generateJWT(payload);
 
   const sanitizedPassword = check_xss(passwordValue);
   // check_xss 함수로 비밀번호 const Sanitize
@@ -236,13 +254,22 @@ const check_input = () => {
 
   login_count(); // 로그인 카운트
   session_set(); // 세션 생성
+  localStorage.setItem('jwt_token', jwtToken); // 세션 생성 이후 토큰을 로컬에 저장
+
+  // 로그인 성공 시
+  const password = passwordInput.value.trim();
+  encryptAESGCM(password, 'mySecretKey').then((encrypted) => {
+    sessionStorage.setItem('Session_Storage_pass2', encrypted);
+  });
 
   loginForm.submit();
 };
 
+// 로그아웃(카운트, 세션 삭제) 함수
 function logout() {
   logout_count(); // 로그아웃 카운트
   session_del(); //세션 삭제
+  removeJWT(); // jwt토큰 삭제
   location.href = '../index.html';
 }
 
