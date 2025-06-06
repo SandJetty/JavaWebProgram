@@ -1,7 +1,7 @@
 // JWT 비밀 키 (실제 운영 환경에서는 복잡한 키 사용 필수)
 const JWT_SECRET = 'your_secret_key_here';
 
-function generateJWT(payload) {
+export function generateJWT(payload) {
   // 1. 헤더 생성 및 Base64 인코딩
   const header = { alg: 'HS256', typ: 'JWT' };
   const encodedHeader = btoa(JSON.stringify(header));
@@ -21,7 +21,7 @@ function generateJWT(payload) {
 }
 
 // 토큰 검증
-function verifyJWT(token) {
+export function verifyJWT(token) {
   // 토큰 검증
   try {
     // 1. 토큰을 헤더, 페이로드, 서명으로 분할
@@ -51,7 +51,7 @@ function verifyJWT(token) {
 }
 
 // 사용자 인증 상태 확인
-function isAuthenticated() {
+export function isAuthenticated() {
   const token = localStorage.getItem('jwt_token');
   if (!token) return false; // 토큰 없음
   const payload = verifyJWT(token);
@@ -60,7 +60,7 @@ function isAuthenticated() {
 }
 
 // 인증 검사 수행
-function checkAuth() {
+export function checkAuth() {
   const authenticated = isAuthenticated(); // 한 번만 검증 호출
   if (authenticated) {
     alert('정상적으로 토큰이 검증되었습니다.');
@@ -71,6 +71,6 @@ function checkAuth() {
 }
 
 // jwt 토큰 삭제 함수
-function removeJWT() {
+export function removeJWT() {
   localStorage.removeItem('jwt_token');
 }

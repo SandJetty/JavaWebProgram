@@ -1,3 +1,23 @@
+import {
+  session_set,
+  session_get,
+  session_check,
+  session_del,
+} from './session.js';
+import {
+  encrypt_text,
+  decrypt_text,
+  encodeByAES256,
+  decodeByAES256,
+} from './crypto.js';
+import {
+  generateJWT,
+  checkAuth,
+  verifyJWT,
+  isAuthenticated,
+  removeJWT,
+} from './jwt_token.js';
+
 const check_xss = (input) => {
   // DOMPurify 라이브러리 로드 (CDN사용)
   const DOMPurify = window.DOMPurify;
@@ -16,17 +36,21 @@ const check_xss = (input) => {
   return sanitizedInput;
 };
 
+// init함수
 function init() {
   const emailInput = document.getElementById('typeEmailX');
   const idsave_check = document.getElementById('idSaveCheck');
   let get_id = getCookie('id');
 
-  if (get_id) {
+  if (emailInput && idsave_check && get_id) {
     emailInput.value = get_id;
     idsave_check.checked = true;
   }
   session_check(); // 세션 유무 검사
 }
+document.addEventListener('DOMContentLoaded', () => {
+  init();
+});
 
 // set 쿠키
 function setCookie(name, value, expiredays) {
